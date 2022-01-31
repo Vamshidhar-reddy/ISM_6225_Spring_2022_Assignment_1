@@ -5,6 +5,7 @@ WRITE YOUR CODE IN THE RESPECTIVE FUNCTION BLOCK
 
 */
 using System;
+using System.Collections.Generic;
 
 namespace DIS_Assignmnet1_SPRING_2022
 {
@@ -90,7 +91,22 @@ namespace DIS_Assignmnet1_SPRING_2022
             try
             {
                 // write your code here
-                String final_string ="";
+                String final_string = "";
+                // loop for every character in the string and looks for vowels
+                for (int i = 0; i < s.Length; i++)
+                {
+                    if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u' || s[i] == 'A' || s[i] == 'E' || s[i] == 'I' || s[i] == 'O' || s[i] == 'U')
+                    {
+                        // if the character is a vowel don't add to the final string
+                    }
+                    else
+                    {
+                        final_string += s[i]; 
+                        // if the character
+                    }
+
+
+                }
                 return final_string;
             }
             catch (Exception)
@@ -125,8 +141,20 @@ namespace DIS_Assignmnet1_SPRING_2022
         {
             try
             {
-                // write your code here.
-                return false;
+                string str1 = "";       
+                // initialize both strings
+                string str2 = "";
+                for (int i = 0; i < bulls_string1.Length; i++)
+                    str1 += bulls_string1[i];                      
+                // concatenate the strings from the string array
+                for (int i = 0; i < bulls_string2.Length; i++)
+                    str2 += bulls_string2[i];
+                bool vam = str1.Equals(str2);        
+                // compare if the strings are equal or not
+
+                return vam; 
+                //return true if equal or false if not
+
             }
             catch (Exception)
             {
@@ -159,11 +187,36 @@ namespace DIS_Assignmnet1_SPRING_2022
             try
             {
                 // write your code here
-                return 0;
+                Dictionary<int, int> dict = new Dictionary<int, int>();  
+                // Dictionary is keeping track of all the elements in the array
+                int sum = 0;
+                for (int i = 0; i < bull_bucks.Length; i++)   
+                    // running the loop
+                {
+                    if (dict.ContainsKey(bull_bucks[i]) == true)   
+                        // if the key is already present, just increment the count
+                    {
+                        dict[bull_bucks[i]]++;
+                        continue;
+                    }
+
+                    dict.Add(bull_bucks[i], 1);         
+                    // initially, keep value as 1 for all keys
+                }
+                foreach (KeyValuePair<int, int> kp in dict)
+                {
+                    if (kp.Value == 1)              
+                        // if the value(count) is 1, then add it to the key
+                        sum += kp.Key;
+                }
+
+                return sum;            
+                // return the sum
 
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine("An error occured: " + e.Message);
                 throw;
             }
         }
@@ -193,8 +246,28 @@ namespace DIS_Assignmnet1_SPRING_2022
             try
             {
                 // write your code here.
+                int sum = 0;
+                int len = bulls_grid.GetLength(0);       
+                // size of multidimensional array.
+                for (int i = 0; i < len; i++)
+                {
+                    for (int j = 0; j < len; j++)
+                    {
+                        if (i == j)                 
+                            // left diagonal condition
+                            sum += bulls_grid[i, j];
+                        if (i + j == len - 1)           
+                            // right diagonal condition
+                            sum += bulls_grid[i, j];
+                        if (i == j && (i + j == len - 1))   
+                            // condition for common cells
+                            sum -= bulls_grid[i, j];
+                    }
+                }
 
-                return 0;
+
+                return sum;             
+                //returning the diagonal sum
             }
             catch (Exception e)
             {
@@ -225,7 +298,21 @@ namespace DIS_Assignmnet1_SPRING_2022
             try
             {
                 // write your code here.
-                return "null";
+                //In this problem, I understood how to use character array 
+                // write your code here.
+                // Store index with the string char and return string based of indices char.
+
+                char[] charArr = new char[indices.Length];    
+                // initializing the character array
+                for (int i = 0; i < indices.Length; i++)
+                {
+                    charArr[indices[i]] = bulls_string[i];      
+                    // placing the respective characters in their place in the new array
+                }
+                string res = new(charArr);
+                return res;             
+                // returning the string
+
             }
             catch (Exception e)
             {
@@ -264,12 +351,24 @@ namespace DIS_Assignmnet1_SPRING_2022
         {
             try
             {
-                String prefix_string ="";
-                return prefix_string;
+                int ind = bulls_string6.IndexOf(ch);    
+                // get the index of the character (first occurance)
+                String prefix_string = bulls_string6.Substring(0, ind + 1);    
+                // find the substring upto the found first occurance of the character
+                char[] charArray = prefix_string.ToCharArray();       
+                // change to char array   
+                Array.Reverse(charArray);                               
+                // reverse the char array
+                prefix_string = new string(charArray);              
+                // change the array to string
+                string suffix = bulls_string6.Substring(ind + 1);       
+                // find the substring from the found character
+                return prefix_string + suffix;            
+                // concatenate the reversed string with the other substring and return the final string
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine("An error occured: " + e.Message);
                 throw;
             }
 

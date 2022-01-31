@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "XBNrlOEIQ5ljy7ErUTGsSKfBicvkDEX5UvAoCTWYLJ6psr4/nWGRM3sH5Qoov8oFvn2XtZeYbgZejJMBHQhDBw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vamsh\\OneDrive\\Desktop\\DIS\\Assignment_1\\ISM_6225_Spring_2022_Assignment_1\\Assignment_1_Spring_2022\\Assignment_1_Spring_2022.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vamsh\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512",
+    "C:\\Users\\vamsh\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\vamsh\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\vamsh\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
